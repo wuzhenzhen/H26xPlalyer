@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">H26xPlalyer</string>
+
+    <string name="video_loading">加载中,请稍后...</string>
 </resources>

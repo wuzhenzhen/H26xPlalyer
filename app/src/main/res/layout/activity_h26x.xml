@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    android:id="@+id/ll_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300px">
 
-    <SurfaceView
-            android:id="@+id/surface"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
+            android:background="@color/teal_200"
+            android:gravity="center"
+            android:text="top"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <SurfaceView
+        android:id="@+id/surface"
+        android:layout_width="match_parent"
+        android:layout_height="600px" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/teal_200"
+            android:gravity="center"
+            android:text="bottom"
+            android:textColor="@color/black" />
+    </LinearLayout>
 </LinearLayout>
