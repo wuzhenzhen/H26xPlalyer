@@ -34,7 +34,7 @@ public class CustomActivity extends BaseActivity{
     private ConstraintLayout.LayoutParams mInitVideoViewLp;
     private CustomVideoView mVideoView;
     private int mCurrPlayPos=65;//当前视频已播放时长
-    private int mVideoDuration=600;//当前视频总时长
+    private int mVideoDuration=610;//当前视频总时长
     CustomVideoView.VideoListener listener;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
