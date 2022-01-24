@@ -18,6 +18,8 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.kgd.h26xplalyer.yuvplayer.YUVTestActivity;
+
 import java.io.File;
 import java.io.FilenameFilter;
 
@@ -114,6 +116,9 @@ public class MainActivity extends BaseActivity {
         });
     }
 
+    public void yuvPlayer(View view){
+        startActivity(new Intent(this, YUVTestActivity.class));
+    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
