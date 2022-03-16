@@ -32,7 +32,7 @@ public class H26XActivity extends AppCompatActivity {
         holder.addCallback(new SurfaceHolder.Callback() {
             @Override
             public void surfaceCreated(@NonNull SurfaceHolder surfaceHolder) {
-                if("H264".equals(h26x)){
+                if("h264".equals(h26x)){
                     h264DeCodePlay = new H264DeCodePlay(videoPath, holder.getSurface());
                     h264DeCodePlay.decodePlay();
                 }else if ("h265".equals(h26x)){

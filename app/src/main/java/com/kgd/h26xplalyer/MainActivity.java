@@ -1,6 +1,5 @@
 package com.kgd.h26xplalyer;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.content.Intent;
@@ -108,7 +107,7 @@ public class MainActivity extends BaseActivity {
                     intent.putExtra("h26x",H26x);
                     startActivity(intent);
                 }else if (rb_codeStream2.isChecked()){  //8765设备发过来的原始文件 包含协议头
-                    Intent intent = new Intent(MainActivity.this,TM8765Activity.class);
+                    Intent intent = new Intent(MainActivity.this,TM8765Activity.class); //此处可以采用CustomActivity 自定义view可以视频全屏与非全屏播放
                     intent.putExtra("path",path);
                     startActivity(intent);
                 }

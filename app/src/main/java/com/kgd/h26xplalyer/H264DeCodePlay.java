@@ -36,13 +36,13 @@ public class H264DeCodePlay {
         try {
             Log.e(TAG, "videoPath " + videoPath);
             //创建解码器 H264的Type为  AAC
-            mediaCodec = MediaCodec.createDecoderByType("video/avc");
+            mediaCodec = MediaCodec.createDecoderByType("video/avc");   //----Stopped:Uninitialized状态
             //创建配置
-            MediaFormat mediaFormat = MediaFormat.createVideoFormat("video/avc", 540, 960);
+            MediaFormat mediaFormat = MediaFormat.createVideoFormat("video/avc", 1280, 720);
             //设置解码预期的帧速率【以帧/秒为单位的视频格式的帧速率的键】
             mediaFormat.setInteger(MediaFormat.KEY_FRAME_RATE, 15);
             //配置绑定mediaFormat和surface
-            mediaCodec.configure(mediaFormat, surface, null, 0);
+            mediaCodec.configure(mediaFormat, surface, null, 0);    //----Stopped:Configured状态
         } catch (IOException e) {
             e.printStackTrace();
             //创建解码失败
@@ -54,7 +54,7 @@ public class H264DeCodePlay {
      * 解码播放
      */
     void decodePlay() {
-        mediaCodec.start();
+        mediaCodec.start();     //----Executing: Flushed状态
         new Thread(new MyRun()).start();
     }
 
@@ -84,7 +84,7 @@ public class H264DeCodePlay {
                     if (nextFrameStart == -1) break;
                     MediaCodec.BufferInfo info = new MediaCodec.BufferInfo();
                     // 查询10000毫秒后，如果dSP芯片的buffer全部被占用，返回-1；存在则大于0
-                    int inIndex = mediaCodec.dequeueInputBuffer(10000);
+                    int inIndex = mediaCodec.dequeueInputBuffer(10000);     //----Executing: Running子状态
                     if (inIndex >= 0) {
                         //根据返回的index拿到可以用的buffer
                         ByteBuffer byteBuffer = inputBuffers[inIndex];

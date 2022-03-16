@@ -69,7 +69,7 @@ public class H265DeCodePlay {
         @Override
         public void run() {
             try {
-                //1、IO流方式读取h264文件【太大的视频分批加载】
+                //1、IO流方式读取h265文件【太大的视频分批加载】
                 byte[] bytes = null;
                 bytes = getBytes(videoPath);
                 Log.e(TAG, "bytes size " + bytes.length);
